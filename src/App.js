@@ -1,16 +1,18 @@
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+//import Navbar from './components/Navbar';
+import { Login } from './components/Login';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <div className="landing-page">
       <Router>
-
-      <Navbar/>
-      <Switch>
-        <Route path='/' exact/>
-      </Switch>
+        {/* <Navbar /> */}
+        <Routes>
+          <Route path='/' exact/>
+        </Routes>
       </Router>
+      <br></br>
+      <Login/>
     </div>
   );
 }
