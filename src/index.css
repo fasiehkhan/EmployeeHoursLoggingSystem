@@ -15,7 +15,7 @@ code {
 .landing-page {
   display: flex;
   min-height: 100vh;
-  min-width: 80vh;
+  min-width: 100px;
   align-items:center;
   justify-content:center;
   background-image: linear-gradient(0deg, #2d0b15,#132432, #142f21);
@@ -25,7 +25,7 @@ code {
   display:flex;
   flex-direction: column;
   margin: 1rem;
-  padding: 5rem;
+  padding: 4rem;
   border: 1px solid white;
   border-radius: 10px;
 }
@@ -49,11 +49,22 @@ input {
 }
 
 button {
-  margin: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  margin-left: 6em;
+  margin-right: 6em;
   border: none;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: bold;
+}
+
+p#title {
+  inline-size: 300px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 2rem;
 }

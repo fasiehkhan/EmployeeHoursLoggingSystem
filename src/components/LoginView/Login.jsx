@@ -11,6 +11,7 @@ export const Login = () => {
 
     return (
         <div id="auth-form-container">
+            <p id="title">Welcome to the Employee Time Management System</p>
             <form id="login-form">
                 <label htmlFor="userid">User ID</label>
                 <input value={userid} onChange={(e) => setUserId(e.target.value)} type="text" id="userid" name="userid" />
