@@ -1,19 +1,27 @@
 //import Navbar from './components/Navbar';
 import { Login } from './components/LoginView/Login';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ManagerView from './components/ManagerView';
+import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 
 function App() {
   return (
-    <div className="landing-page">
       <Router>
-        {/* <Navbar /> */}
-        <Routes>
-          <Route path='/' exact/>
-        </Routes>
+          <div className="landing-page">
+            <Navbar />
+          <div className='content'>
+            <Switch>
+              <Route exact path="/">
+                    <Login />
+              </Route>
+              <Route exact path="/manager">
+                    <ManagerView />
+              </Route>
+            </Switch>
+          </div>
+        </div>
       </Router>
-      <br></br>
-      <Login/>
-    </div>
   );
 }
 
