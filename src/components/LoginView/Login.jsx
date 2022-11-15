@@ -4,10 +4,10 @@ export const Login = () => {
     const [userid, setUserId] = useState('');
     const [password, setPassword] = useState('');
 
-    /*     const handleSubmit = (e) => {
-            e.preventDefault();
-            console.log(userid);
-        } */
+/*     const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(userid);
+    } */
 
     return (
         <div id="auth-form-container">
