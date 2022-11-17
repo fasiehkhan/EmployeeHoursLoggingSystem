@@ -77,3 +77,28 @@ p#title {
   justify-content:center;
   background-image: linear-gradient(0deg, #2d0b15,#132432, #142f21);
 }
+
+.employee, .manager {
+  color: white;
+  min-height: 100vh;
+  min-width: 100px;
+  margin: 30px;
+}
+
+.employee h2, h4 {
+  text-align: center;
+}
+
+.employee p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.employee button {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100px;
+    text-align: center;
+}

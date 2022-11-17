@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from './views/Login';
 import { Manager } from './views/Manager';
 import { Employee } from './views/Employee';
+import { EmployeeHistory } from './views/EmployeeHistory';
+import { EmployeeTimePunches } from './views/EmployeeTimePunches';
+import { EmployeeRequest } from './views/EmployeeRequest';
 
 export default function App() {
   return (
@@ -13,6 +16,9 @@ export default function App() {
             <Route index element={<Login />} />
             <Route path="manager" element={<Manager />} />
             <Route path="employee" element={<Employee />} />
+            <Route path="employee-history" element={<EmployeeHistory />} />
+            <Route path="employee-time-punches" element={<EmployeeTimePunches />} />
+            <Route path="employee-request" element={<EmployeeRequest />} />
           </Route>
         </Routes>
       </BrowserRouter>

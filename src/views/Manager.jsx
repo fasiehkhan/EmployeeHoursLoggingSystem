@@ -1,7 +1,9 @@
 export const Manager = () => {
     return (
-        <div className="manager-view">
-            <h1>Manager View</h1>
+        <div className="manager">
+            <h2>Manager Dashboard</h2>
+            <h4>Name: </h4>
+            <h4>ID: </h4>
         </div>
     );
 };
