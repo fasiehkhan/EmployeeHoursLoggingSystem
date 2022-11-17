@@ -14,7 +14,7 @@ export const Employee = () => {
         <div className="employee">
             <h2>Employee Dashboard</h2>
             <h4>Name: </h4>
-            <h4>ID: </h4>
+            <h4>Employee ID: </h4>
             <br></br><br></br>
             <div>
                 <p>What would you like to do?</p>
