@@ -68,3 +68,12 @@ p#title {
   text-align: center;
   padding-bottom: 2rem;
 }
+
+.manager-view {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100px;
+  align-items:center;
+  justify-content:center;
+  background-image: linear-gradient(0deg, #2d0b15,#132432, #142f21);
+}
