@@ -5,7 +5,10 @@ import { Manager } from './views/Manager';
 import { Employee } from './views/Employee';
 import { EmployeeHistory } from './views/EmployeeHistory';
 import { EmployeeTimePunches } from './views/EmployeeTimePunches';
-import { EmployeeRequest } from './views/EmployeeRequest';
+import { EmployeeStartShift } from './views/EmployeeStartShift';
+import { EmployeeEndShift } from './views/EmployeeEndShift';
+import { EmployeeStartBreak } from './views/EmployeeStartBreak';
+import { EmployeeEndBreak } from './views/EmployeeEndBreak';
 
 export default function App() {
   return (
@@ -18,7 +21,10 @@ export default function App() {
             <Route path="employee" element={<Employee />} />
             <Route path="employee-history" element={<EmployeeHistory />} />
             <Route path="employee-time-punches" element={<EmployeeTimePunches />} />
-            <Route path="employee-request" element={<EmployeeRequest />} />
+            <Route path="employee-start-shift" element={<EmployeeStartShift />} />
+            <Route path="employee-end-shift" element={<EmployeeEndShift />} />
+            <Route path="employee-start-break" element={<EmployeeStartBreak />} />
+            <Route path="employee-end-break" element={<EmployeeEndBreak />} />
           </Route>
         </Routes>
       </BrowserRouter>

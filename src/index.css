@@ -105,3 +105,13 @@ p#title {
     width: 100px;
     text-align: center;
 }
+
+.employee #trivial {
+  font-size: 15px;
+}
+
+.employee #datetime {
+  outline: 2px solid white;
+  padding: 10px;
+  line-height:30px;
+}
