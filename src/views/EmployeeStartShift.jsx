@@ -9,7 +9,7 @@ export const EmployeeStartShift = () => {
             <h4>Employee ID: </h4>
             <br></br><br></br>
             <div>
-                <p id="trivial">Successfully started shift at:</p>
+                <p id="trivial">Started shift at:</p>
                 <p id="datetime">
                     <strong>Date: </strong> {date.toLocaleDateString()}
                     <br></br>

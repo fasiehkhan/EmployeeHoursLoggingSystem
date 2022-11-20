@@ -11,7 +11,7 @@ export const EmployeeEndShift = () => {
             <h4>Employee ID: </h4>
             <br></br><br></br>
             <div>
-                <p id="trivial">Successfully ended shift at:</p>
+                <p id="trivial">Ended shift at:</p>
                 <p id="datetime">
                     <strong>Date: </strong> {curTime.toLocaleDateString()}
                     <br></br>
