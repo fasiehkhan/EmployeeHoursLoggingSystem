@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
 export const Employee = () => {
-    let navigate = useNavigate(); 
-    const navigateToHistory = () =>{ 
-        let path = `/employee-history`; 
+    let navigate = useNavigate();
+    const navigateToHistory = () => {
+        let path = `/employee-history`;
         navigate(path);
     };
-    const navigateToTimePunches = () =>{ 
-        let path = `/employee-time-punches`; 
+    const navigateToTimePunches = () => {
+        let path = `/employee-time-punches`;
         navigate(path);
     };
     return (

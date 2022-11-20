@@ -6,9 +6,13 @@ import { Employee } from './views/Employee';
 import { EmployeeHistory } from './views/EmployeeHistory';
 import { EmployeeTimePunches } from './views/EmployeeTimePunches';
 import { EmployeeRequest } from './views/EmployeeRequest';
+import Navbar from "./components/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
+    <div>
+          <Navbar />
     <div className="landing-page">
       <BrowserRouter>
         <Routes>
@@ -22,6 +26,7 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+    </div>
     </div>
   );
 }
