@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 
 .App {
   background-image: linear-gradient(0deg, #2d0b15,#132432, #142f21);
 }
 
 body {
-  margin:0;
+  margin: 0;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -13,13 +15,13 @@ body {
   display: flex;
   min-height: 100vh;
   min-width: 100px;
-  align-items:center;
-  justify-content:center;
-  background-image: linear-gradient(0deg, #2d0b15,#132432, #142f21);
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(0deg, #2d0b15, #132432, #142f21);
 }
 
 #auth-form-container {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin: 1rem;
   padding: 4rem;
@@ -80,19 +82,33 @@ p#title {
   display: flex;
   min-height: 100vh;
   min-width: 100px;
-  align-items:center;
-  justify-content:center;
-  background-image: linear-gradient(0deg, #2d0b15,#132432, #142f21);
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(0deg, #2d0b15, #132432, #142f21);
 }
 
-.employee, .manager {
+.employee {
   color: white;
   min-height: 100vh;
   min-width: 100px;
   margin: 30px;
 }
 
-.employee h2, h4 {
+.manager {
+  min-height: 100vh;
+  min-width: 100px;
+  position: absolute;
+  color: white;
+}
+
+
+.manager h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.employee h2,
+h4 {
   text-align: center;
 }
 
@@ -102,12 +118,12 @@ p#title {
 }
 
 .employee button {
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    width: 100px;
-    text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100px;
+  text-align: center;
 }
 
 .employee #trivial {
