@@ -1,9 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { React } from "react";
 
 export const EmployeeTimePunches = () => {
     let navigate = useNavigate();
-    const navigateToEmployeeRequest = () =>{ 
-        let path = `/employee-request`; 
+    const navigateToStartShift = () => { 
+        let path = `/employee-start-shift`; 
+        navigate(path);
+    };
+    const navigateToEndShift = () => { 
+        let path = `/employee-end-shift`; 
+        navigate(path);
+    };
+    const navigateToStartBreak = () => { 
+        let path = `/employee-start-break`; 
+        navigate(path);
+    };
+    const navigateToEndBreak = () => { 
+        let path = `/employee-end-break`; 
         navigate(path);
     };
     return (
@@ -14,12 +27,12 @@ export const EmployeeTimePunches = () => {
             <br></br><br></br>
             <div>
                 <p>What would you like to do?</p>
-                <button onClick={navigateToEmployeeRequest}>Start Shift</button> 
-                <button onClick={navigateToEmployeeRequest}>End Shift</button>
+                <button onClick={navigateToStartShift}>Start Shift</button> 
+                <button onClick={navigateToEndShift}>End Shift</button>
                 <br></br>
-                <button onClick={navigateToEmployeeRequest}>Start Break</button>
-                <button onClick={navigateToEmployeeRequest}>End Break</button>
+                <button onClick={navigateToStartBreak}>Start Break</button>
+                <button onClick={navigateToEndBreak}>End Break</button>
             </div>
         </div>
-    );
+    )
 };
