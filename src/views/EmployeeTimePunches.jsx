@@ -1,7 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { React } from "react";
+import { React, useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
 
 export const EmployeeTimePunches = () => {
+    const [dt, setDt] = useState(new Date().toLocaleString());
+    useEffect(() => {
+        let secTimer = setInterval( () => {
+          setDt(new Date().toLocaleString())
+        },1000)
+        return () => clearInterval(secTimer);
+    }, []);
     let navigate = useNavigate();
     const navigateToStartShift = () => { 
         let path = `/employee-start-shift`; 
@@ -19,19 +27,33 @@ export const EmployeeTimePunches = () => {
         let path = `/employee-end-break`; 
         navigate(path);
     };
+    const navigateBack = () => { 
+        navigate(-1);
+    };
     return (
         <div className="employee">
-            <h2>Employee Time Punches</h2>
-            <h4>Name: </h4>            
-            <h4>Employee ID: </h4>
+            <h1>Employee Time Punches</h1>
+            <br></br>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Employee ID:</strong> </p>
+            <p><strong>Current Date:</strong> {dt}</p>
             <br></br><br></br>
-            <div>
+            <div id="emp">
                 <p>What would you like to do?</p>
-                <button onClick={navigateToStartShift}>Start Shift</button> 
-                <button onClick={navigateToEndShift}>End Shift</button>
-                <br></br>
-                <button onClick={navigateToStartBreak}>Start Break</button>
-                <button onClick={navigateToEndBreak}>End Break</button>
+                <div id="c-main">
+                    <div id="c1">
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToStartShift} size="lg" >Start Shift</Button>
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToEndShift} size="lg" >End Shift</Button>
+                    </div>
+                    <div class="vr"></div>
+                    <div id="c3">
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToStartBreak} size="lg" >Start Break</Button>
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToEndBreak} size="lg" >End Break</Button>
+                    </div>
+                </div>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     )

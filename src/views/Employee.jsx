@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import React, { useState, useEffect } from 'react';
 
 export const Employee = () => {
     let navigate = useNavigate(); 
@@ -10,16 +12,25 @@ export const Employee = () => {
         let path = `/employee-time-punches`; 
         navigate(path);
     };
+    const [dt, setDt] = useState(new Date().toLocaleString());
+    useEffect(() => {
+        let secTimer = setInterval( () => {
+          setDt(new Date().toLocaleString())
+        },1000)
+        return () => clearInterval(secTimer);
+    }, []);
     return (
         <div className="employee">
-            <h2>Employee Dashboard</h2>
-            <h4>Name: </h4>
-            <h4>Employee ID: </h4>
+            <h1>Employee Dashboard</h1>
+            <br></br>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Employee ID:</strong> </p>
+            <p><strong>Current Date:</strong> {dt}</p>
             <br></br><br></br>
-            <div>
+            <div id="emp">
                 <p>What would you like to do?</p>
-                <button onClick={navigateToHistory}>View History</button>
-                <button onClick={navigateToTimePunches}>Time Punches</button>
+                <Button id="emp-btn" variant="outline-light" onClick={navigateToHistory} size="lg">View History</Button>{' '}{' '}
+                <Button id="emp-btn" variant="outline-light" onClick={navigateToTimePunches} size="lg" >Time Punches</Button>
             </div>
         </div>
     );

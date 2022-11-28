@@ -1,20 +1,39 @@
-import  React, { useState } from 'react';
+import  React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 export const EmployeeStartShift = () => {
-    var [date] = useState(new Date());
+    let navigate = useNavigate();
+    const navigateBack = () => { 
+        navigate(-1);
+    };
+    const date = useState(new Date().toLocaleDateString());
+    const time = useState(new Date().toLocaleTimeString());
+    const [dt, setDt] = useState(new Date().toLocaleString());
+    useEffect(() => {
+        let secTimer = setInterval( () => {
+          setDt(new Date().toLocaleString())
+        },1000)
+        return () => clearInterval(secTimer);
+    }, []);
     return (
         <div className="employee">
-            <h2>Start Shift</h2>
-            <h4>Name: </h4>
-            <h4>Employee ID: </h4>
+            <h1>Employee Dashboard</h1>
+            <br></br>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Employee ID:</strong> </p>
+            <p><strong>Current Time:</strong> {dt}</p>
             <br></br><br></br>
             <div>
                 <p id="trivial">Started shift at:</p>
                 <p id="datetime">
-                    <strong>Date: </strong> {date.toLocaleDateString()}
+                    <strong>Date: </strong> {date}
                     <br></br>
-                    <strong>Time: </strong> {date.toLocaleTimeString()}
+                    <strong>Time: </strong> {time}
                 </p>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     );

@@ -1,14 +1,27 @@
-import  React, { useState } from 'react';
-//import { EmployeeStartShift } from './EmployeeStartShift';
+import  React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 export const EmployeeEndShift = () => {
+    let navigate = useNavigate();
+    const navigateBack = () => { 
+        navigate(-1);
+    };
     var [curTime] = useState(new Date());
-    //var [duration] = curTime - startTime;
+    const [dt, setDt] = useState(new Date().toLocaleString());
+    useEffect(() => {
+        let secTimer = setInterval( () => {
+          setDt(new Date().toLocaleString())
+        },1000)
+        return () => clearInterval(secTimer);
+    }, []);
     return (
         <div className="employee">
-            <h2>End Shift</h2>
-            <h4>Name: </h4>
-            <h4>Employee ID: </h4>
+            <h1>Employee Dashboard</h1>
+            <br></br>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Employee ID:</strong> </p>
+            <p><strong>Current Time:</strong> {dt}</p>
             <br></br><br></br>
             <div>
                 <p id="trivial">Ended shift at:</p>
@@ -19,6 +32,9 @@ export const EmployeeEndShift = () => {
                 </p>
                 <br></br><br></br>
                 <p id="trivial">Duration of shift:</p>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     );

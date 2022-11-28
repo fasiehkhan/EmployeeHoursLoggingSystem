@@ -17,7 +17,7 @@ export const Login = () => {
                 <input value={userid} onChange={(e) => setUserId(e.target.value)} type="text" id="userid" name="userid" />
                 <label htmlFor="password">Password</label>
                 <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
-                <button>Login</button>
+                <button id="login-btn">Login</button>
             </form>
         </div>
     )
