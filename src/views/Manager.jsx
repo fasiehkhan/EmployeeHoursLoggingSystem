@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-
+import { React, useState, useEffect } from 'react';
 
 export const Manager = () => {
 
@@ -16,13 +16,21 @@ export const Manager = () => {
         console.log("Modified")
     }
 
+    const [dt, setDt] = useState(new Date().toLocaleString());
+    useEffect(() => {
+        let secTimer = setInterval( () => {
+          setDt(new Date().toLocaleString())
+        },1000)
+        return () => clearInterval(secTimer);
+    }, []);
 
     return (
         <div className="manager">
             <h1>Manager Dashboard</h1>
             <br></br>
-            <p>Name: </p>
-            <p>Manager ID: </p>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Manager ID:</strong> </p>
+            <p><strong>Current Date:</strong> {dt}</p>
             <br></br>
             <Table striped bordered hover variant="dark">
                 <thead>

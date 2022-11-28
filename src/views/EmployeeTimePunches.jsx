@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { React } from "react";
+import { React, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 
 export const EmployeeTimePunches = () => {
+    const [dt, setDt] = useState(new Date().toLocaleString());
+    useEffect(() => {
+        let secTimer = setInterval( () => {
+          setDt(new Date().toLocaleString())
+        },1000)
+        return () => clearInterval(secTimer);
+    }, []);
     let navigate = useNavigate();
     const navigateToStartShift = () => { 
         let path = `/employee-start-shift`; 
@@ -27,8 +34,9 @@ export const EmployeeTimePunches = () => {
         <div className="employee">
             <h1>Employee Time Punches</h1>
             <br></br>
-            <p>Name: </p>
-            <p>Employee ID: </p>
+            <p><strong>Name:</strong> </p>
+            <p><strong>Employee ID:</strong> </p>
+            <p><strong>Current Date:</strong> {dt}</p>
             <br></br><br></br>
             <div id="emp">
                 <p>What would you like to do?</p>
