@@ -2,7 +2,6 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 
-
 export const Manager = () => {
 
     const handleAccepted = () => {
@@ -49,8 +48,6 @@ export const Manager = () => {
                     </tr>
                 </tbody>
             </Table>
-
-
         </div>
     );
 };
