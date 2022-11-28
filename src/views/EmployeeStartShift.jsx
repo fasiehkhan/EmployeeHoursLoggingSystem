@@ -25,8 +25,8 @@ export const EmployeeStartShift = () => {
             <p><strong>Current Time:</strong> {dt}</p>
             <br></br><br></br>
             <div>
-                <p id="trivial">Started shift at:</p>
-                <p id="datetime">
+                <p id="detail-start">Started shift at:</p>
+                <p id="datetime-start">
                     <strong>Date: </strong> {date}
                     <br></br>
                     <strong>Time: </strong> {time}

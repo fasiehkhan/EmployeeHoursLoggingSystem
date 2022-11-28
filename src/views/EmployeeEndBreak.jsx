@@ -24,8 +24,8 @@ export const EmployeeEndBreak = () => {
             <p><strong>Current Time:</strong> {dt}</p>
             <br></br><br></br>
             <div>
-                <p id="trivial">Ended break at:</p>
-                <p id="datetime">
+                <p id="detail-end">Ended break at:</p>
+                <p id="datetime-end">
                     <strong>Date: </strong> {date.toLocaleDateString()}
                     <br></br>
                     <strong>Time: </strong> {date.toLocaleTimeString()}

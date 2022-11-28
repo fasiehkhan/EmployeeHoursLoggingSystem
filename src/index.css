@@ -121,10 +121,36 @@ p#title {
   margin: 10px;
 }
 
-.employee #datetime {
-  outline: 2px solid white;
+#detail-start {
+  font-size: large;
+  font-weight: 600;
+  color:rgb(47, 255, 68);
+}
+
+#detail-end {
+  font-size: large;
+  font-weight: 600;
+  color:rgb(255, 106, 47);
+}
+
+#datetime-start {
+  outline: 2px solid rgb(47, 255, 68);
+  color: rgb(47, 255, 68);
   padding: 10px;
   line-height: 30px;
+  width: 9.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#datetime-end {
+  outline: 2px solid rgb(255, 106, 47);
+  color: rgb(255, 106, 47);
+  padding: 10px;
+  line-height: 30px;
+  width: 9.5rem;
+  border-radius: 4px;
+  text-align: center;
 }
 
 #back {
