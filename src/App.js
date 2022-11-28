@@ -9,9 +9,14 @@ import { EmployeeStartShift } from './views/EmployeeStartShift';
 import { EmployeeEndShift } from './views/EmployeeEndShift';
 import { EmployeeStartBreak } from './views/EmployeeStartBreak';
 import { EmployeeEndBreak } from './views/EmployeeEndBreak';
+import Navbar1 from "./components/Navbar";
 
 export default function App() {
   return (
+    <div>
+    <div>
+  <Navbar1 />
+    </div>
     <div className="landing-page">
       <BrowserRouter>
         <Routes>
@@ -28,6 +33,7 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+    </div>
     </div>
   );
 }
