@@ -30,7 +30,8 @@ export const Manager = () => {
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Time (H)</th>
-                        <th>Date (mm/dd/yyyy)</th>
+                        <th>Shift Type</th>
+                        <th>Date (yyyy-mm-dd)</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@ export const Manager = () => {
                         <td>2:00</td>
                         <td>10:00</td>
                         <td>8</td>
+                        <td>Work</td>
                         <td>12/10/2022</td>
                         <td><Button variant="outline-success" onClick={handleAccepted}>Accept</Button>{' '}
                             <Button variant="outline-danger" onClick={handleRejected}>Reject</Button>{' '}
