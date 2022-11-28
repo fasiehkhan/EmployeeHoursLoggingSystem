@@ -166,6 +166,7 @@ p#title {
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-right: 10px;
 }
 
 #back-btn:hover {
@@ -177,4 +178,20 @@ p#title {
   color: white;
   padding-top: 80px;
   text-align: center;
+}
+
+#logout-btn {
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  background-color: rgba(73, 73, 73, 0.389);
+  font-size: 15px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 10px;
+}
+
+#logout-btn:hover {
+  background: #fbfbfb87;
+  color: black;
 }

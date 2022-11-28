@@ -7,6 +7,10 @@ export const EmployeeStartShift = () => {
     const navigateBack = () => { 
         navigate(-1);
     };
+    const navigateToLogoutPage = () => { 
+        let path = `/logout`; 
+        navigate(path);
+    };
     const date = useState(new Date().toLocaleDateString());
     const time = useState(new Date().toLocaleTimeString());
     const [dt, setDt] = useState(new Date().toLocaleString());
@@ -34,6 +38,7 @@ export const EmployeeStartShift = () => {
             </div>
             <div id="back">
                 <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
+                <Button id="logout-btn" variant="light" onClick={navigateToLogoutPage} size="sm">Logout</Button>
             </div>
         </div>
     );

@@ -7,6 +7,10 @@ export const EmployeeStartBreak = () => {
     const navigateBack = () => { 
         navigate(-1);
     };
+    const navigateToLogoutPage = () => { 
+        let path = `/logout`; 
+        navigate(path);
+    };
     var [date] = useState(new Date());
     const [dt, setDt] = useState(new Date().toLocaleString());
     useEffect(() => {
@@ -33,6 +37,7 @@ export const EmployeeStartBreak = () => {
             </div>
             <div id="back">
                 <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
+                <Button id="logout-btn" variant="light" onClick={navigateToLogoutPage} size="sm">Logout</Button>
             </div>
         </div>
     );

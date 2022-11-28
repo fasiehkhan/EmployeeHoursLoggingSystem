@@ -1,6 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { React, useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export const Manager = () => {
 
@@ -16,13 +17,19 @@ export const Manager = () => {
         console.log("Modified")
     }
 
-    const [dt, setDt] = useState(new Date().toLocaleTimeString());
+    const [dt, setDt] = useState(new Date().toLocaleString());
     useEffect(() => {
         let secTimer = setInterval(() => {
             setDt(new Date().toLocaleString())
         }, 1000)
         return () => clearInterval(secTimer);
     }, []);
+
+    let navigate = useNavigate();
+    const navigateToLogoutPage = () => { 
+        let path = `/logout`; 
+        navigate(path);
+    };
 
     return (
         <div className="manager">
@@ -60,6 +67,9 @@ export const Manager = () => {
                     </tr>
                 </tbody>
             </Table>
+            <div id="back">
+                <Button id="logout-btn" variant="light" onClick={navigateToLogoutPage} size="sm">Logout</Button>
+            </div>
         </div>
     );
 };
