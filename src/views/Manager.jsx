@@ -20,8 +20,10 @@ export const Manager = () => {
     return (
         <div className="manager">
             <h1>Manager Dashboard</h1>
+            <br></br>
             <p>Name: </p>
             <p>Manager ID: </p>
+            <br></br>
             <Table striped bordered hover variant="dark">
                 <thead>
                     <tr>

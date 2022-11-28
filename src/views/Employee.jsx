@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export const Employee = () => {
     let navigate = useNavigate(); 
@@ -12,14 +13,15 @@ export const Employee = () => {
     };
     return (
         <div className="employee">
-            <h2>Employee Dashboard</h2>
-            <h4>Name: </h4>
-            <h4>Employee ID: </h4>
+            <h1>Employee Dashboard</h1>
+            <br></br>
+            <p>Name: </p>
+            <p>Employee ID: </p>
             <br></br><br></br>
-            <div>
+            <div id="emp">
                 <p>What would you like to do?</p>
-                <button onClick={navigateToHistory}>View History</button>
-                <button onClick={navigateToTimePunches}>Time Punches</button>
+                <Button id="emp-btn" variant="outline-light" onClick={navigateToHistory} size="lg">View History</Button>{' '}{' '}
+                <Button id="emp-btn" variant="outline-light" onClick={navigateToTimePunches} size="lg" >Time Punches</Button>
             </div>
         </div>
     );

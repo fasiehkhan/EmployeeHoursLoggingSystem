@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { React } from "react";
+import Button from 'react-bootstrap/Button';
 
 export const EmployeeTimePunches = () => {
     let navigate = useNavigate();
@@ -21,17 +22,24 @@ export const EmployeeTimePunches = () => {
     };
     return (
         <div className="employee">
-            <h2>Employee Time Punches</h2>
-            <h4>Name: </h4>            
-            <h4>Employee ID: </h4>
+            <h1>Employee Time Punches</h1>
+            <br></br>
+            <p>Name: </p>
+            <p>Employee ID: </p>
             <br></br><br></br>
-            <div>
+            <div id="emp">
                 <p>What would you like to do?</p>
-                <button onClick={navigateToStartShift}>Start Shift</button> 
-                <button onClick={navigateToEndShift}>End Shift</button>
-                <br></br>
-                <button onClick={navigateToStartBreak}>Start Break</button>
-                <button onClick={navigateToEndBreak}>End Break</button>
+                <div id="c-main">
+                    <div id="c1">
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToStartShift} size="lg" >Start Shift</Button>
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToEndShift} size="lg" >End Shift</Button>
+                    </div>
+                    <div class="vr"></div>
+                    <div id="c3">
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToStartBreak} size="lg" >Start Break</Button>
+                        <Button id="emp-btn" variant="outline-light" onClick={navigateToEndBreak} size="lg" >End Break</Button>
+                    </div>
+                </div>
             </div>
         </div>
     )

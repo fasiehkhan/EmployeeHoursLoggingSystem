@@ -4,9 +4,10 @@ export const EmployeeStartBreak = () => {
     var [date] = useState(new Date());
     return (
         <div className="employee">
-            <h2>Start Break</h2>
-            <h4>Name: </h4>
-            <h4>Employee ID: </h4>
+            <h1>Employee Dashboard</h1>
+            <br></br>
+            <p>Name: </p>
+            <p>Employee ID: </p>
             <br></br><br></br>
             <div>
                 <p id="trivial">Successfully started break at:</p>
