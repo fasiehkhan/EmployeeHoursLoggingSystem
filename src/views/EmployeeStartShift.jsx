@@ -7,11 +7,12 @@ export const EmployeeStartShift = () => {
     const navigateBack = () => { 
         navigate(-1);
     };
-    var [date] = useState(new Date());
+    const date = useState(new Date().toLocaleDateString());
+    const time = useState(new Date().toLocaleTimeString());
     const [dt, setDt] = useState(new Date().toLocaleString());
     useEffect(() => {
         let secTimer = setInterval( () => {
-          setDt(new Date().toLocaleTimeString())
+          setDt(new Date().toLocaleString())
         },1000)
         return () => clearInterval(secTimer);
     }, []);
@@ -26,9 +27,9 @@ export const EmployeeStartShift = () => {
             <div>
                 <p id="trivial">Started shift at:</p>
                 <p id="datetime">
-                    <strong>Date: </strong> {date.toLocaleDateString()}
+                    <strong>Date: </strong> {date}
                     <br></br>
-                    <strong>Time: </strong> {date.toLocaleTimeString()}
+                    <strong>Time: </strong> {time}
                 </p>
             </div>
             <div id="back">

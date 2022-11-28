@@ -11,7 +11,7 @@ export const EmployeeStartBreak = () => {
     const [dt, setDt] = useState(new Date().toLocaleString());
     useEffect(() => {
         let secTimer = setInterval( () => {
-          setDt(new Date().toLocaleTimeString())
+          setDt(new Date().toLocaleString())
         },1000)
         return () => clearInterval(secTimer);
     }, []);

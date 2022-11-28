@@ -16,7 +16,7 @@ export const Manager = () => {
         console.log("Modified")
     }
 
-    const [dt, setDt] = useState(new Date().toLocaleString());
+    const [dt, setDt] = useState(new Date().toLocaleTimeString());
     useEffect(() => {
         let secTimer = setInterval( () => {
           setDt(new Date().toLocaleString())
