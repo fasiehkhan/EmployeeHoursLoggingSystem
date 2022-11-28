@@ -4,14 +4,14 @@ export const Login = () => {
     const [userid, setUserId] = useState('');
     const [password, setPassword] = useState('');
 
-/*     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(userid);
-    } */
+    /*     const handleSubmit = (e) => {
+            e.preventDefault();
+            console.log(userid);
+        } */
 
     return (
         <div id="auth-form-container">
-            <p id="title">Welcome to the Employee Time Management System</p>
+            <p id="title">Welcome to TimeSheet</p>
             <form id="login-form">
                 <label htmlFor="userid">User ID</label>
                 <input value={userid} onChange={(e) => setUserId(e.target.value)} type="text" id="userid" name="userid" />

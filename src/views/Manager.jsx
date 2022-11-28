@@ -18,9 +18,9 @@ export const Manager = () => {
 
     const [dt, setDt] = useState(new Date().toLocaleTimeString());
     useEffect(() => {
-        let secTimer = setInterval( () => {
-          setDt(new Date().toLocaleString())
-        },1000)
+        let secTimer = setInterval(() => {
+            setDt(new Date().toLocaleString())
+        }, 1000)
         return () => clearInterval(secTimer);
     }, []);
 
