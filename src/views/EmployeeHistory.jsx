@@ -30,10 +30,11 @@ export const EmployeeHistory = () => {
                         <tr>
                             <th>Employee Id</th>
                             <th>Name</th>
-                            <th>Type</th>
                             <th>Start Time</th>
                             <th>End Time</th>
-                            <th>Duration (H)</th>
+                            <th>Time (H)</th>
+                            <th>Shift Type</th>
+                            <th>Date</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -41,10 +42,11 @@ export const EmployeeHistory = () => {
                         <tr>
                             <td>1</td>
                             <td>Mark Smith</td>
-                            <td>Shift</td>
-                            <td>21/11/2022, 2:00 PM</td>
-                            <td>21/11/2022, 10:00 PM</td>
+                            <td>2:00</td>
+                            <td>10:00</td>
                             <td>8.5</td>
+                            <td>Work</td>
+                            <td>21/11/2022</td>
                             <td>Accepted</td>
                         </tr>
                     </tbody>
