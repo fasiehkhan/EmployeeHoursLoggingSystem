@@ -128,7 +128,7 @@ p#title {
 }
 
 #back {
-  margin-top: 10rem;
+  margin-top: 6rem;
   text-align: center;
 }
 
@@ -140,4 +140,9 @@ p#title {
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+#back-btn:hover {
+  background: #fbfbfb87;
+  color: black;
 }
