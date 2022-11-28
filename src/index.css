@@ -172,3 +172,9 @@ p#title {
   background: #fbfbfb87;
   color: black;
 }
+
+.logout {
+  color: white;
+  padding-top: 80px;
+  text-align: center;
+}

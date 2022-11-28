@@ -11,7 +11,7 @@ function Navbar1() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/employee">Employee</Nav.Link>
             <Nav.Link href="/manager">Manager</Nav.Link>
-            <Nav.Link href="/">Sign Out</Nav.Link>
+            <Nav.Link href="/logout">Log Out</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
