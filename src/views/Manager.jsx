@@ -2,7 +2,22 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 
+
 export const Manager = () => {
+
+    const handleAccepted = () => {
+        console.log("Accepted")
+    }
+
+    const handleRejected = () => {
+        console.log("Rejected")
+    }
+
+    const handleModify = () => {
+        console.log("Modified")
+    }
+
+
     return (
         <div className="manager">
             <h1>Manager Dashboard</h1>
@@ -28,9 +43,9 @@ export const Manager = () => {
                         <td>10:00</td>
                         <td>8</td>
                         <td>12/10/2022</td>
-                        <td><Button variant="outline-success">Accept</Button>{' '}
-                            <Button variant="outline-danger">Reject</Button>{' '}
-                            <Button variant="outline-primary">Modify</Button></td>
+                        <td><Button variant="outline-success" onClick={handleAccepted}>Accept</Button>{' '}
+                            <Button variant="outline-danger" onClick={handleRejected}>Reject</Button>{' '}
+                            <Button variant="outline-primary" onClick={handleModify}>Modify</Button></td>
                     </tr>
                 </tbody>
             </Table>
