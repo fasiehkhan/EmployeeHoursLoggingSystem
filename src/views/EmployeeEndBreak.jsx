@@ -27,7 +27,7 @@ export const EmployeeEndBreak = () => {
             <p><strong>Employee ID:</strong> </p>
             <p><strong>Current Time:</strong> {dt}</p>
             <br></br><br></br>
-            <div>
+            <div id="info">
                 <p id="detail-end">Ended break at:</p>
                 <p id="datetime-end">
                     <strong>Date: </strong> {date.toLocaleDateString()}

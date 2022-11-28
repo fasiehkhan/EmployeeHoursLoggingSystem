@@ -27,7 +27,7 @@ export const EmployeeEndShift = () => {
             <p><strong>Employee ID:</strong> </p>
             <p><strong>Current Time:</strong> {dt}</p>
             <br></br><br></br>
-            <div id="shift-break-container">
+            <div id="info">
                 <p id="detail-end">Ended shift at:</p>
                 <p id="datetime-end">
                     <strong>Date: </strong> {curTime.toLocaleDateString()}
