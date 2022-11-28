@@ -1,6 +1,12 @@
 import  React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 export const EmployeeEndBreak = () => {
+    let navigate = useNavigate();
+    const navigateBack = () => { 
+        navigate(-1);
+    };
     var [date] = useState(new Date());
     return (
         <div className="employee">
@@ -18,6 +24,9 @@ export const EmployeeEndBreak = () => {
                 </p>
                 <br></br><br></br>
                 <p id="trivial">Duration of break:</p>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     );

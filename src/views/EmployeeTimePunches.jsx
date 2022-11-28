@@ -20,6 +20,9 @@ export const EmployeeTimePunches = () => {
         let path = `/employee-end-break`; 
         navigate(path);
     };
+    const navigateBack = () => { 
+        navigate(-1);
+    };
     return (
         <div className="employee">
             <h1>Employee Time Punches</h1>
@@ -40,6 +43,9 @@ export const EmployeeTimePunches = () => {
                         <Button id="emp-btn" variant="outline-light" onClick={navigateToEndBreak} size="lg" >End Break</Button>
                     </div>
                 </div>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     )

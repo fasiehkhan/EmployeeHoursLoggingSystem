@@ -1,7 +1,12 @@
 import  React, { useState } from 'react';
-//import { EmployeeStartShift } from './EmployeeStartShift';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 export const EmployeeEndShift = () => {
+    let navigate = useNavigate();
+    const navigateBack = () => { 
+        navigate(-1);
+    };
     var [curTime] = useState(new Date());
     //var [duration] = curTime - startTime;
     return (
@@ -20,6 +25,9 @@ export const EmployeeEndShift = () => {
                 </p>
                 <br></br><br></br>
                 <p id="trivial">Duration of shift:</p>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     );

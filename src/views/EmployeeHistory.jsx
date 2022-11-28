@@ -1,6 +1,12 @@
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 export const EmployeeHistory = () => {
+    let navigate = useNavigate();
+    const navigateBack = () => { 
+        navigate(-1);
+    };
     return (
         <div className="employee">
             <h1>Employee Dashboard</h1>
@@ -33,6 +39,9 @@ export const EmployeeHistory = () => {
                     </tr>
                 </tbody>
             </Table>
+            </div>
+            <div id="back">
+                <Button id="back-btn" variant="light" onClick={navigateBack} size="sm">Back</Button>
             </div>
         </div>
     );
