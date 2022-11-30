@@ -50,26 +50,17 @@ app.post('/api/register', (req, res)=> {
         ); 
 });
 
-app.post('/api/login', (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+app.get('/api/login/*/*', (req, res) => {
+    const valuesArray = req.originalUrl.split("/");
+    const username = valuesArray[3];
+    const password = valuesArray[4];
 
-    db.query(
-        "SELECT * FROM user WHERE username = ? AND password = ?;", 
-        [username, password],
-        (err, result) => {
+    const sqlUpdate = `SELECT * FROM user WHERE username = '${username}' AND password = '${password}';`
 
-            if (err) {
-                res.send({ err: err })
-            } 
+    db.query(sqlUpdate, (err, result) => {
+            if (err) throw err 
+            res.send(result)
             
-            if (result.length > 0) {
-                res.send(result)
-                console.log(result)
-            } else {
-                res.send({ message: "Wrong username/password combo!" });
-            }
-
         }
         ); 
 });

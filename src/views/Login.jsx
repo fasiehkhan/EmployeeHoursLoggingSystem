@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from 'axios';
+import { useEffect } from 'react';
 
 export const Login = () => {
     const [useridReg, setUserIdReg] = useState('');
@@ -8,6 +9,7 @@ export const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [backendData, setBackendData] = useState([{}]);
 
     const [loginStatus, setLoginStatus] = useState('');
 
@@ -21,7 +23,7 @@ export const Login = () => {
         });
     };
 
-    
+    /*
     const login = () => {
         Axios.post('http://localhost:3002/api/login', {
             username: username,
@@ -31,47 +33,31 @@ export const Login = () => {
             console.log(res);
         });
     };
-
-
+*/
+    const login = () => {
+        console.log("here")
+        fetch(`http://localhost:3002/api/login/100200/fasieh`).then(
+            response => response.json()
+        ).then(
+            data => {
+                setBackendData(data)
+                console.log(data)
+            }
+        )
+    }
+    
 
     return (
-        <div id="auth-form-container">
-            <p id="title">Welcome to the Employee Time Management System </p>
-            <form id="login-form">
-                <label>User ID</label>
-                <input 
-                    type="text"
-                    onChange={(e) => {
-                        setUserIdReg(e.target.value);
-                    }}
-                 />
-                <label>Password</label>
-                <input 
-                    type="text"
-                    onChange={(e) => {
-                        setPasswordReg(e.target.value);
-                    }} />
-                <label >Employee Type</label>
-                <input 
-                    type="text"
-                    onChange={(e) => {
-                        setUserTypeReg(e.target.value);
-                    }}
-                 />
-
-                <button onClick={register}>Register</button>
-                
-            </form>
-            
-        <form id="login-form">
+        <div> 
+    <form id="login-form">
                 <label>User ID</label>
                 <input  onChange={(e) => setUsername(e.target.value)} type="text"  />
                 <label >Password</label>
                 <input onChange={(e) => setPassword(e.target.value)} type="text"  />
                 <button onClick={login}>Login</button>
          </form>
-             
-            <h1>{loginStatus}</h1>
-        </div>
+        
+       </div>
+
     )
 }
