@@ -39,25 +39,26 @@ db.connect((err) => {
 });
 
 app.get("/api/employee", (req,res) => {
+    console.log("hello");
     const sqlInsert = "SELECT * FROM employee_time;"
     db.query(sqlInsert, (err,result) => {
         res.send(result)
     })
 });
 
-/*
-app.post('/register', (req, res)=> {
+app.post('/api/register', (req, res)=> {
 
     const username = req.body.username;
     const password = req.body.password;
+    const usertype = req.body.usertype;
     db.query(
-        "INSERT INTO users (username, password) VALUES (?,?)", 
-        [username, password], 
+        "INSERT INTO user (username, password, userType) VALUES (?,?,?)", 
+        [username, password, usertype], 
         (err, res) => {
         console.log(err) 
         }
         ); 
 });
-*/
+
 
 app.listen(process.env.PORT || PORT);
