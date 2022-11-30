@@ -6,10 +6,11 @@ export const Login = () => {
     const [passwordReg, setPasswordReg] = useState('');
     const [userTypeReg, setUserTypeReg] = useState('');
 
-    /*     const handleSubmit = (e) => {
-            e.preventDefault();
-            console.log(userid);
-        } */
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [loginStatus, setLoginStatus] = useState('');
+
     const register = () => {
         Axios.post('http://localhost:3002/api/register', {
             username: useridReg,
@@ -20,24 +21,37 @@ export const Login = () => {
         });
     };
 
+    
+    const login = () => {
+        Axios.post('http://localhost:3002/api/login', {
+            username: username,
+            password: password,
+        }).then((res) => {
+            console.log("hi")
+            console.log(res);
+        });
+    };
+
+
+
     return (
         <div id="auth-form-container">
             <p id="title">Welcome to the Employee Time Management System </p>
             <form id="login-form">
-                <label htmlFor="userid">User ID</label>
+                <label>User ID</label>
                 <input 
                     type="text"
                     onChange={(e) => {
                         setUserIdReg(e.target.value);
                     }}
-                value={useridReg} />
-                <label htmlFor="password">Password</label>
+                 />
+                <label>Password</label>
                 <input 
                     type="text"
                     onChange={(e) => {
                         setPasswordReg(e.target.value);
                     }} />
-                <label htmlFor="password">Employee Type</label>
+                <label >Employee Type</label>
                 <input 
                     type="text"
                     onChange={(e) => {
@@ -49,15 +63,15 @@ export const Login = () => {
                 
             </form>
             
-        {/*<form id="login-form">
-                <label htmlFor="userid">User ID</label>
-                <input value={userid} onChange={(e) => setUserId(e.target.value)} type="text" id="userid" name="userid" />
-                <label htmlFor="password">Password</label>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
-                <button>Login</button>
-         </form>*/}
+        <form id="login-form">
+                <label>User ID</label>
+                <input  onChange={(e) => setUsername(e.target.value)} type="text"  />
+                <label >Password</label>
+                <input onChange={(e) => setPassword(e.target.value)} type="text"  />
+                <button onClick={login}>Login</button>
+         </form>
              
-
+            <h1>{loginStatus}</h1>
         </div>
     )
 }

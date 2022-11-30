@@ -14,20 +14,10 @@ app.use(cors());
 
 // Test connection 
 app.get("/", (req,res) => {
-    res.send("<h1>Hello there :)<h1>")
+    res.send("<h1>Welcome to the EHLS API! :)<h1>")
 });
 
 
-/*
-// Create connection 
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-
-});
-*/
 const db = mysql.createConnection(process.env.DATABASE_URL);
 
 // Connect
@@ -56,6 +46,30 @@ app.post('/api/register', (req, res)=> {
         [username, password, usertype], 
         (err, res) => {
         console.log(err) 
+        }
+        ); 
+});
+
+app.post('/api/login', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    db.query(
+        "SELECT * FROM user WHERE username = ? AND password = ?;", 
+        [username, password],
+        (err, result) => {
+
+            if (err) {
+                res.send({ err: err })
+            } 
+            
+            if (result.length > 0) {
+                res.send(result)
+                console.log(result)
+            } else {
+                res.send({ message: "Wrong username/password combo!" });
+            }
+
         }
         ); 
 });
